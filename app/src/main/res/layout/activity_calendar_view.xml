@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".controllers.CalendarView">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/colorPrimary"
+
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/calendar_top"
+            android:layout_weight="0.15">
+
+
+            <RelativeLayout
+                android:id="@+id/previous"
+                android:layout_width="40dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/arrow_left" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dip"
+                android:textColor="@color/colorBlueDark"
+                android:textSize="30dip"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/next"
+                android:layout_width="40dip"
+                android:layout_height="30dip"
+                android:layout_alignParentRight="true" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/arrow_right" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <GridView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/gridView"
+            android:layout_width="fill_parent"
+
+            android:layout_height="200dp"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="7"
+            android:stretchMode="columnWidth"
+            android:layout_weight="0.33" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:id="@+id/view1"
+            android:layout_below="@id/gridView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="0.64"></View>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_btn_speak_now" />
+
+</android.support.design.widget.CoordinatorLayout>

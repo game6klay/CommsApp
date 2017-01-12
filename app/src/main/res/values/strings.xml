@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">MyCommunicationHub</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="time_prompt">Choose AM/PM</string>
+    <string name="group_type_prompt">Choose Group</string>
+    <string name="event_type_prompt">Type of Event</string>
+
+    <string-array name="time_arrays">
+        <item>AM</item>
+        <item>PM</item>
+    </string-array>
+
+    <string-array name="group_type_arrays">
+        <item>Friends1</item>
+        <item>Friends2</item>
+        <item>Family2</item>
+        <item>Family2</item>
+        <item>Colleagues</item>
+    </string-array>
+
+    <string-array name="event_type_arrays">
+        <item>Presentation</item>
+        <item>Meeting</item>
+        <item>Hangout</item>
+        <item>Outing</item>
+        <item>Date</item>
+    </string-array>
+
+    <string-array name="reminder_options_arrays">
+        <item>5 min</item>
+        <item>10 min</item>
+        <item>15 min</item>
+        <item>30 min</item>
+        <item>1 hour</item>
+    </string-array>
+
+    <string name="title_activity_add_event">AddEventActivity</string>
+</resources>

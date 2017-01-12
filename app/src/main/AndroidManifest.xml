@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.patja2r.mycommunicationhub">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".controllers.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".controllers.CalendarView" />
+        <activity android:name=".controllers.EventTypeActivity" />
+        <activity android:name=".controllers.SelectEventTimeActivity" />
+        <activity android:name=".controllers.EventHistoryActivity"/>
+        <activity
+            android:name=".controllers.AddEventActivity"
+            android:label="@string/title_activity_add_event"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity android:name=".controllers.ViewEventDialog"/>
+    </application>
+
+</manifest>

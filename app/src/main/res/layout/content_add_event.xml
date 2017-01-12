@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".controllers.CalendarView">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".controllers.AddEventActivity"
+    tools:showIn="@layout/activity_add_event">
+
+    <TextView
+        android:id="@+id/tvEventDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:textSize="50dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="30dp"
+        android:layout_centerHorizontal="true"
+         />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/login_background"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvEventDate">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <Spinner
+                android:id="@+id/sGroupType"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_toRightOf="@+id/tvGroupType"
+                android:layout_marginTop="20dp"
+                android:minHeight="80dp"
+                android:entries="@array/group_type_arrays"
+                android:layout_gravity="right"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:id="@+id/tvGroupType"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:text="Select Group"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:paddingTop="20dp"
+                android:layout_alignTop="@+id/sGroupType"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/tvEventType"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:text="Select Event"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:paddingTop="30dp"
+                android:layout_below="@+id/tvGroupType"
+                />
+
+            <Spinner
+                android:id="@+id/sEventType"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_toRightOf="@+id/tvGroupType"
+                android:layout_marginTop="0dp"
+                android:minHeight="80dp"
+                android:layout_below="@+id/sGroupType"
+                android:layout_gravity="right"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlTiming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sEventType"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvStartTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Time"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textStyle="bold"
+                android:textSize="30dp"/>
+
+            <EditText
+                android:id="@+id/etStartTime"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tvStartTime"
+                android:minHeight="30dp"
+                android:textSize="30dp"></EditText>
+
+            <TextView
+                android:id="@+id/tvEndTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvStartTime"
+                android:text="End Time"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textSize="30dp"/>
+
+            <EditText
+                android:id="@+id/etEndTime"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etStartTime"
+                android:layout_toRightOf="@+id/tvStartTime"
+                android:minHeight="30dp"
+                android:textSize="30dp"></EditText>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlReminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlTiming"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/tvReminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reminder"
+                android:textSize="30dp"
+                android:paddingTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:textStyle="bold"/>
+
+            <Spinner
+                android:id="@+id/sReminderOptions"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_toRightOf="@+id/tvReminder"
+                android:minHeight="80dp"
+                android:layout_marginLeft="20dp"
+                />
+
+            <TextView
+                android:id="@+id/tvRepeatMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvReminder"
+                android:paddingTop="60dp"
+                android:text="Repeat Mode"
+                android:textSize="30dp"
+                android:layout_marginLeft="15dp"
+                android:textStyle="bold"/>
+
+            <Switch
+                android:id="@+id/switchRepeatMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sReminderOptions"
+                android:layout_toRightOf="@+id/tvRepeatMode"
+                android:paddingTop="20dp"
+                android:layout_marginLeft="50dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlAddMembers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlReminder"
+            >
+
+            <TextView
+                android:id="@+id/tvAddMember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Members"
+                android:textStyle="bold"
+                android:paddingTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="30dp"/>
+
+            <Button
+                android:id="@+id/bAddMember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tvAddMember"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:text="  Contacts  "
+                android:textColor="#fff"
+                android:background="@color/colorAccent"
+                android:layout_marginBottom="30dp"
+                android:textSize="20dp"
+                android:minHeight="40dp"
+                />
+
+            <EditText
+                android:id="@+id/etDisplayName"
+                android:inputType="textPersonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bAddMember"
+                android:ems="10"/>
+
+            <ListView
+                android:id="@+id/lvMembers"
+                android:inputType="textEmailAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bAddMember"
+                android:layout_toRightOf="@+id/etDisplayName"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/rlAddMembers"
+            android:layout_marginBottom="30dp">
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textStyle="bold"
+                android:textSize="30dp"/>
+
+            <EditText
+                android:id="@+id/etLocation"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tvLocation"
+                android:minHeight="30dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="30dp"></EditText>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabViewEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_input_add" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabSaveEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_menu_save" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabCancelEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_input_delete" />
+
+</android.support.design.widget.CoordinatorLayout>
